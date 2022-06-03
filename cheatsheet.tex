@@ -1,5 +1,6 @@
 \documentclass[10pt]{article}
 
+% Paketi koji će se koristiti
 \usepackage[a4paper, landscape, margin=2.00cm]{geometry}
 \usepackage{amsfonts, amssymb, amsmath}
 \usepackage{graphicx}
@@ -8,6 +9,15 @@
 \usepackage{array}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+
+% Dodaj header i footer
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Šalabahter}
+\rhead{Git + GitHub}
+\lfoot{}
+\rfoot{str. \thepage}
 
 \begin{document}
 \renewcommand{\arraystretch}{1.50}
