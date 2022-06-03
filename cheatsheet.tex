@@ -10,19 +10,25 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[dvipsnames]{xcolor}
 
 % Dodaj header i footer
 \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
 \fancyhf{}
-\lhead{Šalabahter}
-\rhead{Git + GitHub}
+\setlength{\headheight}{32.25pt}
+\lhead{}
+\rhead{\includegraphics[height=1.00cm]{./git.png}}
+\setlength{\footskip}{12.00pt}
 \lfoot{}
-\rfoot{str. \thepage}
+\rfoot{str. {\thepage}/{\pageref{LastPage}}}
 
 \begin{document}
+
 \renewcommand{\arraystretch}{1.50}
 
-    \section*{git config}
+    \section*{\color{BrickRed} git config}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git config -{}-global user.name <"name">                & postavljanje korisničkog imena \\ \hline
@@ -32,19 +38,19 @@
         git config -{}-global core.editor "code -{}-wait"       & postavljanje VS Code-a kao editora \\ \hline
     \end{tabular}
 
-    \section*{git init}
+    \section*{\color{BrickRed} git init}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git init                                                & inicijalizacija trenutnog direktorija kao repozitorija \\ \hline
     \end{tabular}
 
-    \section*{git clone}
+    \section*{\color{BrickRed} git clone}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git clone <URL>                                         & kloniranje repozitorija \\ \hline
     \end{tabular}
 
-    \section*{git remote}
+    \section*{\color{BrickRed} git remote}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git remote [-v]                                 & [detaljni] prikaz \textit{remote}-ova \\ \hline
@@ -54,14 +60,14 @@
         git remote remove <name>                        & uklanjanje \textit{remote}-a \\ \hline                 
     \end{tabular}
 
-    \section*{git fetch}
+    \section*{\color{BrickRed} git fetch}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git fetch <remote>                              & \textit{update}-a stanje svih \textit{branch}-eva \textit{remote} repozitorija \\ \hline
         git fetch <remote> <remote-branch>              & \textit{update}-a stanje pojedinačnog \textit{branch}-a \textit{remote} repozitorija \\ \hline                
     \end{tabular}
 
-    \section*{git pull}
+    \section*{\color{BrickRed} git pull}
     \begin{itemize}
         \item \texttt{git pull origin <remote-branch> = git fetch origin <remote-branch> + git merge <remote>/<branch>}
     \end{itemize}
@@ -70,33 +76,33 @@
         git pull <remote> <remote-branch>               & \textit{update}-a stanje pojedinačnog \textit{branch}-a remote repozitorija i sukladno \textit{update}-a lokalno stanje \\ \hline                
     \end{tabular}
 
-    \section*{git push}
+    \section*{\color{BrickRed} git push}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git push <remote> <local-branch>                    & \textit{push}-anje lokalnog \textit{branch}-a na \textit{remote} istog naziva \\ \hline
         git push -{}-tags <remote> <local-branch>           & \textit{push}-a tagove na remote repozitorij (\textit{tag}-ovi se neće \textit{push}-ati automatski) \\ \hline                   
     \end{tabular}
 
-    \section*{git status}
+    \section*{\color{BrickRed} git status}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git status                                          & status repozitorija (\textit{branch}, \textit{untracked}, \textit{unstaged}, \textit{staged}\dots) \\ \hline
     \end{tabular}
 
-    \section*{git log}
+    \section*{\color{BrickRed} git log}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git log                                             & puni ispis svih \textit{commit}-a na repozitoriju \\ \hline 
         git log -{}-oneline                                 & jednolinijski ispis svih \textit{commit}-a na repozitoriju \\ \hline
     \end{tabular}
 
-    \section*{git add}
+    \section*{\color{BrickRed} git add}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git add <file>                                      & dodavanje datoteka u \textit{staging area} \\ \hline
     \end{tabular}
 
-    \section*{git commit}
+    \section*{\color{BrickRed} git commit}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git commit                                          & \textit{commit} \textit{staged} datoteka (naknadni unos \textit{commit} poruke) \\ \hline
@@ -105,7 +111,7 @@
         git commit -{}-amend                                & \textit{redo} posljednjeg \textit{commit}-a ili uređivanje poruke posljednjeg \textit{commit}-a \\ \hline
     \end{tabular}
 
-    \section*{git branch}
+    \section*{\color{BrickRed} git branch}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git branch -l [-v]                              & [detaljni] prikaz lokalnih \textit{branch}-eva \\ \hline
@@ -116,7 +122,7 @@
         git branch -d <branch-name>                     & brisanje \textit{branch}-a (koristiti \texttt{-D} za nasilno) \\ \hline
     \end{tabular}
 
-    \section*{git switch}
+    \section*{\color{BrickRed} git switch}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git switch <branch-name>                        & prebacivanje s trenutnog na drugi \textit{branch} (ako se koristi ime \textit{remote branch}-a, kreira lokalnu kopiju) \\ \hline
@@ -124,7 +130,7 @@
         git switch -c <branch-name>                     & kreiranje novog \textit{branch}-a s imenom name s trenutnog \textit{HEAD}-a i prebacivanje u njega \\ \hline
     \end{tabular}
 
-    \section*{git merge}
+    \section*{\color{BrickRed} git merge}
     \begin{itemize}
         \item \textit{merge}-ani \textit{branch} se ne briše
     \end{itemize}
@@ -133,7 +139,7 @@
         git merge <branch-name>                         & \textit{merge}-anje \textit{branch}-a u aktivni \textit{branch} \\ \hline
     \end{tabular}
 
-    \section*{git rebase}
+    \section*{\color{BrickRed} git rebase}
     \begin{itemize}
         \item rebase funkcijski može služiti kao zamjena za \textit{merge}
         \begin{itemize}
@@ -146,7 +152,7 @@
         git rebase -i <commit-hash>                     & ulazak u interkativno uređivanje prethodnih \textit{commit}-a, počevši od \textit{commit-hash}-a \\ \hline
     \end{tabular}
 
-    \section*{git diff}
+    \section*{\color{BrickRed} git diff}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git diff <file>                                         & prikazivanje \textit{unstaged} promjena datoteke \\ \hline
@@ -157,7 +163,7 @@
         git diff <branch-name>@\{0\} <branch-name>@\{1\}        & prikazuje promjene između stanja na \textit{branch}-u (vidi \texttt{git reflog show}) \\ \hline
     \end{tabular}
 
-    \section*{git stash}
+    \section*{\color{BrickRed} git stash}
     \begin{itemize}
         \item \textit{stash} je globalan, nije vezan za \textit{branch}
         \begin{itemize}
@@ -174,7 +180,7 @@
         git stash clear                                 & brisanje svih \textit{stashed} promjena iz liste \\ \hline
     \end{tabular}
 
-    \section*{git checkout}
+    \section*{\color{BrickRed} git checkout}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git checkout <branch-name>                      & prebacivanje s trenutnog \textit{HEAD}-a na drugi \textit{branch} (funkcionira i za \textit{remote branch}-eve) \\ \hline
@@ -187,7 +193,7 @@
         git checkout <branch-name>@\{<number>\}         & premještanje u stanje \textit{branch}-a prije \textit{number} koraka (vidi \texttt{git reflog show}) \\ \hline
     \end{tabular}
 
-    \section*{git tag}
+    \section*{\color{BrickRed} git tag}
     \begin{itemize}
         \item \textit{tag} je dodatan pointer na \textit{commit}
         \begin{itemize}
@@ -204,7 +210,7 @@
         git tag -d <tag-name>                           & briše \textit{tag} \\ \hline
     \end{tabular}
 
-    \section*{git restore}
+    \section*{\color{BrickRed} git restore}
     \begin{itemize}
         \item nikad ne uklanja \textit{commit log}
     \end{itemize}
@@ -215,7 +221,7 @@
         git restore -{}-source=<commit-hash> <file>     & poništavanje promjena po uzoru na \textit{commit} (\textit{log} ostaje isti, promjene odlaze u \textit{unstaged}) \\ \hline
     \end{tabular}
 
-    \section*{git reset}
+    \section*{\color{BrickRed} git reset}
     \begin{itemize}
         \item uvijek uklanja \textit{commit log}
         \item \textit{unstaged} i \textit{staged} promjene se mogu prebaciti na drugi branch
@@ -227,7 +233,7 @@
         git reset -{}-hard <commit-hash>                & poništavanje promjena po uzoru na \textit{commit} (\textit{log} se mijenja, promjene se \textit{commit}-aju) \\ \hline
     \end{tabular}
 
-    \section*{git revert}
+    \section*{\color{BrickRed} git revert}
     \begin{itemize}
         \item nikad ne uklanja \textit{commit log}
     \end{itemize}
@@ -236,7 +242,7 @@
         git revert <commit-hash>                        & poništavanje promjena od \textit{commit}-a i dalje (\textit{log} ostaje isti, promjene odlaze u \textit{unstaged-conflicted}) \\ \hline
     \end{tabular}
 
-    \section*{git reflog}
+    \section*{\color{BrickRed} git reflog}
     \begin{itemize}
         \item \textit{reflog}-ovi su lokalni i imaju "rok trajanja"
         \item služe za poništavanje \texttt{git reset} i sl.
