@@ -79,8 +79,8 @@
     \section*{\color{BrickRed} git push}
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
-        git push <remote> <local-branch>                    & \textit{push}-anje lokalnog \textit{branch}-a na \textit{remote} istog naziva \\ \hline
-        git push -{}-tags <remote> <local-branch>           & \textit{push}-a tagove na remote repozitorij (\textit{tag}-ovi se neće \textit{push}-ati automatski) \\ \hline                   
+        git push [-f] <remote> <local-branch>                   & [nasilno] \textit{push}-anje lokalnog \textit{branch}-a na \textit{remote} istog naziva \\ \hline
+        git push -{}-tags <remote> <local-branch>               & \textit{push}-a tagove na remote repozitorij (\textit{tag}-ovi se neće \textit{push}-ati automatski) \\ \hline                   
     \end{tabular}
 
     \section*{\color{BrickRed} git status}
@@ -149,7 +149,7 @@
     \begin{tabular}{|>{\tt}p{9.00cm}|>{}p{15.50cm}|}
         \hline
         git rebase main                                 & reorganizacija/kopiranje \textit{commit}-a s aktualnog \textit{branch}-a na vrh main \textit{branch}-a \\ \hline
-        git rebase -i <commit-hash>                     & ulazak u interaktivno uređivanje prethodnih \textit{commit}-a, počevši od \textit{commit-hash}-a \\ \hline
+        git rebase -i <commit-hash>                     & ulazak u interaktivno uređivanje prethodnih \textit{commit}-a, počevši od \textit{commit}-a prije \textit{commit-hash}-a \\ \hline
     \end{tabular}
 
     \section*{\color{BrickRed} git diff}
